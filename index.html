@@ -3,51 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>图文管理系统实验室</title>
+    <title>StackFarm 实验室 | 金陵科技学院</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f7f6; }
-        header { background: #2c3e50; color: #fff; padding: 2rem 0; text-align: center; }
-        header h1 { margin: 0; font-size: 2.5rem; }
-        header p { margin-top: 0.5rem; font-size: 1.2rem; color: #ecf0f1; }
-        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
-        .card { background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 2rem; }
-        .card h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 0.5rem; margin-top: 0; }
-        footer { text-align: center; padding: 1rem; background: #2c3e50; color: #fff; margin-top: 2rem; }
-        a { color: #3498db; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --border: #30363d;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; margin: 0; padding: 0; }
+        a { color: var(--accent); text-decoration: none; transition: 0.3s; }
+        a:hover { color: #79c0ff; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        /* 头部导航 */
+        header { background: rgba(13, 17, 23, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+        .nav-wrap { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .logo { display: flex; align-items: center; font-size: 1.5rem; font-weight: bold; color: #fff; }
+        .logo img { width: 40px; height: 40px; border-radius: 50%; margin-right: 15px; object-fit: cover; }
+        nav a { margin-left: 25px; font-size: 1rem; color: var(--text-main); }
+        nav a:hover { color: var(--accent); }
+
+        /* 首屏 Hero */
+        .hero { text-align: center; padding: 100px 0 60px; border-bottom: 1px solid var(--border); background: radial-gradient(circle at 50% 0%, rgba(88,166,255,0.15), transparent 70%); }
+        .hero h1 { font-size: 3.5rem; margin: 0 0 10px; color: #fff; letter-spacing: 2px; }
+        .hero h1 span { color: var(--accent); }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 30px; }
+        .btn { display: inline-block; padding: 12px 30px; background: var(--accent); color: #fff; border-radius: 6px; font-weight: bold; }
+        .btn:hover { background: #3182ce; color: #fff; }
+
+        /* 通用区块 */
+        section { padding: 80px 0; }
+        .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 50px; color: #fff; position: relative; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--accent); margin: 15px auto 0; border-radius: 2px; }
+
+        /* 项目卡片 */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 25px; transition: transform 0.3s, border-color 0.3s; }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .card h3 { margin-top: 0; color: #fff; font-size: 1.3rem; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
+        .card ul { list-style: none; padding: 0; margin: 0; color: var(--text-muted); }
+        .card li { margin-bottom: 8px; }
+        .card li::before { content: '👨‍💻'; margin-right: 8px; font-size: 0.9rem; }
+
+        /* 动态与团队图片 */
+        .img-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .img-gallery img { width: 100%; border-radius: 10px; border: 1px solid var(--border); transition: 0.3s; }
+        .img-gallery img:hover { transform: scale(1.02); border-color: var(--accent); }
+        
+        .team-banner { width: 100%; border-radius: 15px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+        footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border); color: var(--text-muted); margin-top: 50px; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>图文管理系统实验室 (XAMI Lab)</h1>
-        <p>探索图文交互与智能管理的未来</p>
+        <div class="container nav-wrap">
+            <div class="logo">
+                <!-- 这里引用了你的徽章图片 -->
+                < img src="images/logo.jpg" alt="StackFarm Logo">
+                StackFarm Lab
+            </div>
+            <nav>
+                <a href=" ">核心项目</a >
+                <a href="#news">实验室动态</a >
+                <a href="#team">团队风采</a >
+            </nav>
+        </div>
     </header>
 
-    <div class="container">
-        <div class="card">
-            <h2>🔬 实验室简介</h2>
-            <p>本实验室致力于图文管理系统、人机交互及前端可视化技术的研究与开发。我们注重理论与实践结合，鼓励学生在真实项目中提升工程能力。</p>
-        </div>
-
-        <div class="card">
-            <h2>📚 研究方向</h2>
-            <ul>
-                <li>图文信息检索与管理</li>
-                <li>前端工程与静态网站生成（Hugo / Hexo）</li>
-                <li>数据结构与算法在系统中的应用</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>📢 最新动态</h2>
-            <p>实验室官网现已通过 GitHub Pages 成功部署上线！</p>
-            <p>参考网站：<a href="https://www.xami-lab.org/" target="_blank">xami-lab.org</a></p>
+    <div class="hero">
+        <div class="container">
+            <h1>探索 <span>软件工程</span> 的无限可能</h1>
+            <p>金陵科技学院 StackFarm 实验室。我们聚焦物联网、AI大模型与智能文档处理，致力于培养顶尖的软件开发与工程实践人才。</p >
+            <a href="#projects" class="btn">探索我们的项目</a >
         </div>
     </div>
 
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">🚀 核心研究项目</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>DocuMind 智能文档处理平台</h3>
+                    <ul>
+                        <li>廖思杰</li><li>祝煜辉</li><li>张峻炜</li><li>刘泱朵</li><li>吴雅慧</li><li>徐子钊</li><li>冯雅彦</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>基于物联网数据融合的病虫害识别</h3>
+                    <ul>
+                        <li>任远</li><li>赵璨瑜</li><li>周子睿</li><li>杨赵一诺</li><li>吴玉婷</li><li>蒋欣然</li><li>张馨月</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>基于开源AI大模型的教学实训智能体</h3>
+                    <ul>
+                        <li>罗文灿</li><li>王达</li><li>杨红</li><li>张瑜涵</li><li>张瑞</li><li><li>梦骁焓</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>MemoirsCore 传送带系统</h3>
+                    <ul>
+                        <li>周珩</li><li>李京儒</li><li>吕怡乐</li><li>王站晖</li><li>张竞元</li><li>李星佳</li><li>王韵媛</li><li>孙家栋</li><li>葛家诚</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" style="background-color: var(--card-bg);">
+        <div class="container">
+            <h2 class="section-title">📢 实验室动态</h2>
+            <div class="img-gallery">
+                <!-- 这里引用你上传的活动照片 -->
+                < img src="images/news1.jpg" alt="第九届软件工程实践教学研讨会">
+                < img src="images/news2.jpg" alt="三循环人才生态参观交流">
+            </div>
+            <p style="text-align: center; margin-top: 20px; color: var(--text-muted);">
+                * 实验室师生积极参与“第九届软件工程实践教学研讨会”及企业参观交流，紧跟行业前沿。
+            </p >
+        </div>
+    </section>
+
+    <section id="team">
+        <div class="container">
+            <h2 class="section-title">🌟 团队风采</h2>
+            <p style="text-align: center; margin-bottom: 40px; color: var(--text-muted);">
+                我们是一个充满活力的大家庭，在各类学科竞赛与科研项目中屡获殊荣。
+            </p >
+            <!-- 这里引用大合照 -->
+            < img src="images/team.jpg" alt="实验室大合照" class="team-banner">
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2026 图文管理系统实验室 | Powered by GitHub Pages</p>
+        <div class="container">
+            <p>&copy; 2026 金陵科技学院 StackFarm 实验室 | 软件工程实践教学基地</p >
+            <p>Powered by GitHub Pages</p >
+        </div>
     </footer>
 
 </body>

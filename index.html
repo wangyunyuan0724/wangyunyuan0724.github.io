@@ -17,13 +17,13 @@
         a { color: var(--accent); text-decoration: none; transition: 0.3s; }
         a:hover { color: #79c0ff; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        
+
         /* 头部导航 */
         header { background: rgba(13, 17, 23, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
-        .nav-wrap { display: flex; justify-content: space-between; align-items: center; height: 70px; }
-        .logo { display: flex; align-items: center; font-size: 1.5rem; font-weight: bold; color: #fff; }
-        .logo img { width: 40px; height: 40px; border-radius: 50%; margin-right: 15px; object-fit: cover; }
-        nav a { margin-left: 25px; font-size: 1rem; color: var(--text-main); }
+        .nav-wrap { display: flex; justify-content: space-between; align-items: center; height: 90px; }
+        .logo { display: flex; align-items: center; font-size: 1.8rem; font-weight: bold; color: #fff; }
+        .logo img { width: 65px; height: 65px; border-radius: 50%; margin-right: 15px; object-fit: cover; }
+        nav a { margin-left: 25px; font-size: 1.1rem; color: var(--text-main); }
         nav a:hover { color: var(--accent); }
 
         /* 首屏 Hero */
@@ -52,7 +52,7 @@
         .img-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .img-gallery img { width: 100%; border-radius: 10px; border: 1px solid var(--border); transition: 0.3s; }
         .img-gallery img:hover { transform: scale(1.02); border-color: var(--accent); }
-        
+
         .team-banner { width: 100%; border-radius: 15px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 
         footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border); color: var(--text-muted); margin-top: 50px; }
@@ -63,14 +63,13 @@
     <header>
         <div class="container nav-wrap">
             <div class="logo">
-                <!-- 这里引用了你的徽章图片 -->
-                <img src="images/logo.jpg" alt="StackFarm Logo">
+                <img src="images/logo.png" alt="StackFarm Logo">
                 StackFarm Lab
             </div>
             <nav>
-                <a href=" ">核心项目</a >
-                <a href="#news">实验室动态</a >
-                <a href="#team">团队风采</a >
+                <a href="#projects">核心项目</a>
+                <a href="#news">实验室动态</a>
+                <a href="#team">团队风采</a>
             </nav>
         </div>
     </header>
@@ -78,8 +77,8 @@
     <div class="hero">
         <div class="container">
             <h1>探索 <span>软件工程</span> 的无限可能</h1>
-            <p>金陵科技学院 StackFarm 实验室。我们聚焦物联网、AI大模型与智能文档处理，致力于培养顶尖的软件开发与工程实践人才。</p >
-            <a href="#projects" class="btn">探索我们的项目</a >
+            <p>金陵科技学院 StackFarm 实验室。我们聚焦物联网、AI大模型与智能文档处理，致力于培养顶尖的软件开发与工程实践人才。</p>
+            <a href="#projects" class="btn">探索我们的项目</a>
         </div>
     </div>
 
@@ -90,7 +89,7 @@
                 <div class="card">
                     <h3>DocuMind 智能文档处理平台</h3>
                     <ul>
-                        <li>廖思杰</li><li>祝煜辉</li><li>张峻炜</li><li>刘泱朵</li><li>吴雅慧</li><li>徐子钊</li><li>冯雅彦</li>
+                        <li>廖思杰</li><li>祝煜辉</li><li>张峻炜</li><li>刘泱朵</li><li>吴雅慧</li><li>徐子钊</li>
                     </ul>
                 </div>
                 <div class="card">
@@ -102,7 +101,7 @@
                 <div class="card">
                     <h3>基于开源AI大模型的教学实训智能体</h3>
                     <ul>
-                        <li>罗文灿</li><li>王达</li><li>杨红</li><li>张瑜涵</li><li>张瑞</li><li>康子宸</li><li>梦骁焓</li>
+                        <li>罗文灿</li><li>王达</li><li>杨红</li><li>张瑜涵</li><li>张瑞</li><li>梦骁焓</li>
                     </ul>
                 </div>
                 <div class="card">
@@ -119,13 +118,12 @@
         <div class="container">
             <h2 class="section-title">📢 实验室动态</h2>
             <div class="img-gallery">
-                <!-- 这里引用你上传的活动照片 -->
                 <img src="images/news1.jpg" alt="第九届软件工程实践教学研讨会">
                 <img src="images/news2.jpg" alt="三循环人才生态参观交流">
             </div>
             <p style="text-align: center; margin-top: 20px; color: var(--text-muted);">
                 * 实验室师生积极参与“第九届软件工程实践教学研讨会”及企业参观交流，紧跟行业前沿。
-            </p >
+            </p>
         </div>
     </section>
 
@@ -134,16 +132,15 @@
             <h2 class="section-title">🌟 团队风采</h2>
             <p style="text-align: center; margin-bottom: 40px; color: var(--text-muted);">
                 我们是一个充满活力的大家庭，在各类学科竞赛与科研项目中屡获殊荣。
-            </p >
-            <!-- 这里引用大合照 -->
+            </p>
             <img src="images/team.jpg" alt="实验室大合照" class="team-banner">
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 金陵科技学院 StackFarm 实验室 | 软件工程实践教学基地</p >
-            <p>Powered by GitHub Pages</p >
+            <p>&copy; 2026 金陵科技学院 StackFarm 实验室 | 软件工程实践教学基地</p>
+            <p>Powered by GitHub Pages</p>
         </div>
     </footer>
 
